@@ -1,0 +1,28 @@
+cd code
+cd code/github
+cat dotfiles
+cd dotfiles
+cat .zprofile
+cd ~
+cp ~/code/github/dotfiles/.zprofile .
+cat /Users/ygreatti/.config/zsh/.zshrc
+ssh_dslvm8
+cat
+cd .config
+cd zsh
+cat zsh_history
+h
+ll
+la
+zsh-syntax-highlighting: unhandled ZLE widget 'fzf-cd-widget'\
+zsh-syntax-highlighting: (This is sometimes caused by doing `bindkey <keys> fzf-cd-widget` without creating the 'fzf-cd-widget' widget with `zle -N` or `zle -C`.)\
+~
+chsh -s /bin/bash
+alias
+exit
+csh /bin/bash
+l
+ls
+cd /bin
+ls
+chsh -s /bin/bash

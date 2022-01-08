@@ -136,3 +136,4 @@ alias lr='ls -lR'          # recursive ls
 
 alias ssh_dslvm8='ssh -o PubkeyAuthentication=no -l ygreatti@concertai.com 10.164.1.74'
 alias rsync_dss='rsync -avz . ygreatti@concertai.com@10.164.1.74:dss_clin_dev/ --exclude .git/'
+alias td1="tree -L 1 --dirsfirst"

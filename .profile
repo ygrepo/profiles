@@ -31,5 +31,5 @@ export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
 
 # Setting PATH for Python 3.8
 # The original version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH

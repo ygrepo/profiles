@@ -20,6 +20,7 @@ fi
 [ -f ~/.config/aliases/local_file_aliases ] && source ~/.config/aliases/local_file_aliases
 
 export CLICOLOR=1
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 #export EDITOR="nvim"
 export IPYTHONDIR="~/.config/ipython"
 export TASKRC="~/.config/task/taskrc"

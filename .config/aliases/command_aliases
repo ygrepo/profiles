@@ -123,7 +123,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias df='/bin/df -h'
 alias dus='du -sh'
 
-alias ll='ls -l'
+alias ll='ls -alG'
 alias l='ls -CF'
 alias ls='ls -hF'  # add colors for filetype recognition
 alias la='ls -Al'          # show hidden files

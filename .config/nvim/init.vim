@@ -1,61 +1,45 @@
-"
-" Jeremy' init.vim
-"
-
-" See the number of the current line and relative line numbers otherwise
 set number
 set relativenumber
+set cursorline
+set scrolloff=4
+set colorcolumn=80
+
+syntax enable
 
 set noswapfile
-syntax enable
-set spell spelllang=en_us
+set hidden
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=8
+set softtabstop=0
+set expandtab
+set shiftwidth=4
+set smarttab
 set smartindent
-set ai " autoindent
-
-set showmode " show the current mode
-set showcmd " show the command as it's being typed
-
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set autoindent
 
 set incsearch
 set ignorecase
 set smartcase
-set nohlsearch " I don't like highlights when I search
+set nohlsearch
 
-set scrolloff=4
-set cursorline
+set splitbelow
+set splitright
+set mouse=
 
-set hidden "navigate to and from without saving
+set showmode
+set showcmd
 
-set splitbelow splitright
-
+" -----------------------------
+" Plugins
+" -----------------------------
 call plug#begin('~/.config/nvim/plugged')
 
-" File Navigation
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-" Completions/Snippets
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'SirVer/ultisnips'
-" Linters/Fixers
-Plug 'dense-analysis/ale'
-" Nice Viewing
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-" Color Schemes
-Plug 'gruvbox-community/gruvbox'
-" Integrate tmux
-Plug 'benmills/vimux'
-" REPL-Driven Development
-Plug 'metakirby5/codi.vim'
-" Comment stuff out
 Plug 'tpope/vim-commentary'
-" Testing stuff
-Plug 'vim-test/vim-test'
-" For git stuff
 Plug 'tpope/vim-fugitive'
+Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
+
+colorscheme gruvbox

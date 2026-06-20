@@ -1,36 +1,55 @@
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Yves's Profile
-BASHRC_CONFIG_DIR=~/.config/bash
 
-if [ -n "$BASH" ] && [ -r $BASHRC_CONFIG_DIR/.bashrc ] && [ -r ~/.config/fzf/fzf.bash ]; then
-    . $BASHRC_CONFIG_DIR/.bashrc
-#    . ~/.config/fzf/fzf.bash
+BASHRC_CONFIG_DIR="$HOME/.config/bash"
+
+if [ -n "$BASH" ] && [ -r "$BASHRC_CONFIG_DIR/.bashrc" ]; then
+    . "$BASHRC_CONFIG_DIR/.bashrc"
 fi
 
-
-
-
-if [ -n "$ZSH_VERSION" ] && [ -r ~/.config/zsh/.zshrc ] && [ -r ~/.config/fzf/fzf.zsh ]; then
-    ZDOTDIR=$HOME/.config/zsh
-    source ~/.config/zsh/.zshrc
-    #. ~/.config/fzf/fzf.zsh
+if [ -n "$ZSH_VERSION" ] && [ -r "$HOME/.config/zsh/.zshrc" ]; then
+    export ZDOTDIR="$HOME/.config/zsh"
+    source "$HOME/.config/zsh/.zshrc"
 fi
 
-[ -f ~/.config/aliases/command_aliases ] && source ~/.config/aliases/command_aliases
-[ -f ~/.config/aliases/file_aliases ] && source ~/.config/aliases/file_aliases
-[ -f ~/.config/aliases/local_file_aliases ] && source ~/.config/aliases/local_file_aliases
+[ -f "$HOME/.config/aliases/command_aliases" ] && source "$HOME/.config/aliases/command_aliases"
+[ -f "$HOME/.config/aliases/file_aliases" ] && source "$HOME/.config/aliases/file_aliases"
+[ -f "$HOME/.config/aliases/local_file_aliases" ] && source "$HOME/.config/aliases/local_file_aliases"
+
+[ -r "$HOME/.config/fzf/fzf.bash" ] && . "$HOME/.config/fzf/fzf.bash"
+[ -r "$HOME/.config/fzf/fzf.zsh" ] && source "$HOME/.config/fzf/fzf.zsh"
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
-#export EDITOR="nvim"
-export IPYTHONDIR="~/.config/ipython"
-export TASKRC="~/.config/task/taskrc"
+export EDITOR="nvim"
+export IPYTHONDIR="$HOME/.config/ipython"
 export LESSHISTFILE="-"
-export LDFLAGS="-L/usr/local/opt/openblas/lib"
-export CPPFLAGS="-I/usr/local/opt/openblas/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
 
-
-# Setting PATH for Python 3.8
-# The original version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
-export PATH
+. "$HOME/.local/bin/env"

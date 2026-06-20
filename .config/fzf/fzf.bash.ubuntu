@@ -1,0 +1,11 @@
+# fzf bash integration for Ubuntu
+
+# Auto-completion
+if [[ $- == *i* ]] && [ -f /usr/share/bash-completion/completions/fzf ]; then
+  source /usr/share/bash-completion/completions/fzf
+fi
+
+# Key bindings: Ctrl-R, Ctrl-T, Alt-C
+if [[ $- == *i* ]] && [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+fi

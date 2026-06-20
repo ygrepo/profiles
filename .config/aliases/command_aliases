@@ -137,3 +137,24 @@ alias lr='ls -lR'          # recursive ls
 alias ssh_dslvm8='ssh -o PubkeyAuthentication=no -l ygreatti@concertai.com 10.164.1.74'
 alias rsync_dss='rsync -avz . ygreatti@concertai.com@10.164.1.74:dss_clin_dev/ --exclude .git/'
 alias td1="tree -L 1 --dirsfirst"
+
+# fd on Ubuntu
+alias fd=fdfind
+
+# fuzzy open file
+export EDITOR="vi"
+alias vf='$EDITOR "$(fd -t f | fzf)"'
+
+
+# fuzzy cd into directory
+cdf() {
+  local dir
+  dir=$(fd -t d 2>/dev/null | fzf) || return
+  [ -n "$dir" ] && cd "$dir"
+}
+
+# ripgrep search, choose file, open in nvim
+rgf() {
+  local file
+  file=$(rg -l "$1" | fzf) && nvim "$file"
+}

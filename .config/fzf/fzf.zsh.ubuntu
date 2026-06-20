@@ -1,0 +1,11 @@
+# fzf zsh integration for Ubuntu
+
+# Auto-completion
+if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
+  source /usr/share/doc/fzf/examples/completion.zsh
+fi
+
+# Key bindings: Ctrl-R, Ctrl-T, Alt-C
+if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
